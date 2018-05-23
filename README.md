@@ -1,6 +1,10 @@
 # Spring Boot - Microservice
-This was initialy made by following this great tutorial series:
+This was initialy made by following this great tutorial series: [Microservices with Spring Boot](http://www.springboottutorial.com/creating-microservices-with-spring-boot-part-1-getting-started)
 
+## See it in action
+Go to http://localhost:8100/currency-converter/from/EUR/to/ARG/quantity/10000 (previously load some currency conversion in the database). This will act on the *CurrencyConverterService* wich will requiere *ForexService* to get the conversion rate.
+
+And to see the Eureka Dashboard just go to http://localhost:8765 (notice I've change the deafult port wich is 8761). There are other URLs but I didn't dig on them */info* and */health*. Also notice that credentials to access the dashboard are newuser and newpassword according to the security configuration below
 
 ### Note about the tutorial
 - To make it work with Eureka, in the Clients, the property where eureka server url is configure must be **defaultZone** instead of *default-zone* as it is in the Tutorial
@@ -58,3 +62,4 @@ public class SecurityConfig {
 ### Advance Security Configurations
 - Continuing reading on *[Spring Cloud Securing Services](http://www.baeldung.com/spring-cloud-securing-services)* could bring more security to the system
 - And also [Using Netflix Eureka with Spring Cloud](http://www.thomas-letsch.de/2015/using-netflix-eureka-with-spring-cloud/) talks about SSL implementation
+- I think [Secure Discovery with Spring Cloud Netflix Eureka](https://piotrminkowski.wordpress.com/2018/05/21/secure-discovery-with-spring-cloud-netflix-eureka/) is deeper with SSL
